@@ -8,5 +8,5 @@
 import Foundation
 
 struct RecommendationsResponse: Codable {
-    let track: [String]
+    let track: [AudioTrack]
 }
