@@ -52,10 +52,10 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         guard let url = webView.url else { return }
-        print("DEBUG: URL - \(url)")
+  
         // Exchange the code for access token
         guard let code = URLComponents(string: url.absoluteString)?.queryItems?.first(where: { $0.name == "code" })?.value else { return }
-        print("DEBUG: Code - \(code)")
+
         webView.isHidden = true
 
         AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in

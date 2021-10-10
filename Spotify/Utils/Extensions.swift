@@ -16,6 +16,7 @@ extension UITabBarController {
         controller.navigationItem.largeTitleDisplayMode = .always
         
         let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.navigationBar.tintColor = .label
         navigationController.tabBarItem = UITabBarItem(title: tabTitle, image: icon, tag: 1)
         
         navigationController.navigationBar.prefersLargeTitles = true
