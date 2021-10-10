@@ -29,6 +29,7 @@
 		3AFDFD972712EBB00039F13D /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD962712EBB00039F13D /* AudioTrack.swift */; };
 		3AFDFD992712EBBB0039F13D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD982712EBBB0039F13D /* Artist.swift */; };
 		3AFDFD9B2712EBC30039F13D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD9A2712EBC30039F13D /* UserProfile.swift */; };
+		3AFDFD9E2712EE9B0039F13D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD9D2712EE9B0039F13D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		3AFDFD962712EBB00039F13D /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		3AFDFD982712EBBB0039F13D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		3AFDFD9A2712EBC30039F13D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		3AFDFD9D2712EE9B0039F13D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		3AFDFD5B2712E7710039F13D /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				3AFDFD9C2712EE800039F13D /* Utils */,
 				3AFDFD702712E8A20039F13D /* Resources */,
 				3AFDFD752712E8D40039F13D /* Managers */,
 				3AFDFD742712E8CB0039F13D /* ViewModels */,
@@ -179,6 +182,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		3AFDFD9C2712EE800039F13D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3AFDFD9D2712EE9B0039F13D /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +272,7 @@
 				3AFDFD932712EB7F0039F13D /* HapticsManager.swift in Sources */,
 				3AFDFD782712EABF0039F13D /* TabBarViewController.swift in Sources */,
 				3AFDFD892712EB290039F13D /* PlayerViewController.swift in Sources */,
+				3AFDFD9E2712EE9B0039F13D /* Extensions.swift in Sources */,
 				3AFDFD952712EBA60039F13D /* Playlist.swift in Sources */,
 				3AFDFD872712EB210039F13D /* ProfileViewController.swift in Sources */,
 				3AFDFD812712EB030039F13D /* AuthViewController.swift in Sources */,

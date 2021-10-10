@@ -12,18 +12,21 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configure()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Helper Functions
+    
+    func configure() {
+        view.backgroundColor = .white
+        let homeViewController = HomeViewController()
+        let searchViewController = SearchViewController()
+        let libraryViewController = LibraryViewController()
+        
+        setViewControllers([
+            self.configureTabItem(forController: homeViewController, screenTitle: "Browse", tabTitle: "Home", icon: UIImage(systemName: "house")!),
+            self.configureTabItem(forController: searchViewController, screenTitle: "Search", tabTitle: "Search", icon: UIImage(systemName: "magnifyingglass")!),
+            self.configureTabItem(forController: libraryViewController, screenTitle: "Library", tabTitle: "Library", icon: UIImage(systemName: "music.note.list")!),
+        ], animated: false)
     }
-    */
-
 }
