@@ -26,7 +26,7 @@ class TabBarViewController: UITabBarController {
         let libraryViewController = LibraryViewController()
         
         setViewControllers([
-            self.configureTabItem(forController: homeViewController, screenTitle: "Browse", tabTitle: "Home", icon: UIImage(systemName: "house")!),
+            self.configureTabItem(forController: homeViewController, screenTitle: "Home", tabTitle: "Home", icon: UIImage(systemName: "house")!),
             self.configureTabItem(forController: searchViewController, screenTitle: "Search", tabTitle: "Search", icon: UIImage(systemName: "magnifyingglass")!),
             self.configureTabItem(forController: libraryViewController, screenTitle: "Library", tabTitle: "Library", icon: UIImage(systemName: "music.note.list")!),
         ], animated: false)

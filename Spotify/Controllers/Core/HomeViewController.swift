@@ -11,18 +11,23 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configure()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Selectors
+    
+    @objc func didTapSettings() {
+        let settingsVC = SettingsViewController()
+        settingsVC.title = "Settings"
+        settingsVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
-    */
-
+    
+    // MARK: - Helper Functions
+    
+    func configure() {
+        view.backgroundColor = .systemBackground
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
+    }
 }

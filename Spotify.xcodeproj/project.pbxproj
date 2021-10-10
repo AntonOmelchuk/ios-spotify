@@ -31,6 +31,7 @@
 		3AFDFD9B2712EBC30039F13D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD9A2712EBC30039F13D /* UserProfile.swift */; };
 		3AFDFD9E2712EE9B0039F13D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD9D2712EE9B0039F13D /* Extensions.swift */; };
 		3AFDFDA0271318330039F13D /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD9F271318330039F13D /* AuthResponse.swift */; };
+		3AFDFDA22713394A0039F13D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFDA12713394A0039F13D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		3AFDFD9A2712EBC30039F13D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		3AFDFD9D2712EE9B0039F13D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3AFDFD9F271318330039F13D /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		3AFDFDA12713394A0039F13D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				3AFDFD982712EBBB0039F13D /* Artist.swift */,
 				3AFDFD9A2712EBC30039F13D /* UserProfile.swift */,
 				3AFDFD9F271318330039F13D /* AuthResponse.swift */,
+				3AFDFDA12713394A0039F13D /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				3AFDFD852712EB170039F13D /* SettingsViewController.swift in Sources */,
 				3AFDFD8F2712EB650039F13D /* AuthManager.swift in Sources */,
 				3AFDFD8B2712EB380039F13D /* PlaylistViewController.swift in Sources */,
+				3AFDFDA22713394A0039F13D /* Settings.swift in Sources */,
 				3AFDFDA0271318330039F13D /* AuthResponse.swift in Sources */,
 				3AFDFD8D2712EB4E0039F13D /* SearchResultsViewController.swift in Sources */,
 				3AFDFD912712EB700039F13D /* APICaller.swift in Sources */,
