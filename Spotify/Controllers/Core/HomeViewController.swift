@@ -222,6 +222,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
 
             return cell
         }

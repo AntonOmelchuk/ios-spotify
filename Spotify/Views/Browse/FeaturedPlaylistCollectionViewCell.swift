@@ -17,7 +17,8 @@ class FeaturedPlaylistCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 4
         
         return imageView
     }()
