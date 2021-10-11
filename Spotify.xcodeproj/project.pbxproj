@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3ABD8F152714B3CB000BF470 /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD8F142714B3CB000BF470 /* NewReleasesCellViewModel.swift */; };
 		3AFDFD5D2712E7710039F13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD5C2712E7710039F13D /* AppDelegate.swift */; };
 		3AFDFD5F2712E7710039F13D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDFD5E2712E7710039F13D /* SceneDelegate.swift */; };
 		3AFDFD662712E7740039F13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFDFD652712E7740039F13D /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3ABD8F142714B3CB000BF470 /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		3AFDFD592712E7710039F13D /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFDFD5C2712E7710039F13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFDFD5E2712E7710039F13D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		3AFDFD742712E8CB0039F13D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3ABD8F142714B3CB000BF470 /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				3AFDFD832712EB0C0039F13D /* WelcomeViewController.swift in Sources */,
 				3AFDFD972712EBB00039F13D /* AudioTrack.swift in Sources */,
 				3AFDFD9B2712EBC30039F13D /* UserProfile.swift in Sources */,
+				3ABD8F152714B3CB000BF470 /* NewReleasesCellViewModel.swift in Sources */,
 				3AFDFD7C2712EAE40039F13D /* SearchViewController.swift in Sources */,
 				3AFDFDA627135F830039F13D /* APIImage.swift in Sources */,
 				3AFDFD7A2712EAD90039F13D /* HomeViewController.swift in Sources */,
