@@ -26,6 +26,46 @@ final class APICaller {
         case failedToGetData
     }
     
+    // MARK: - Category
+    
+    private func getCategories(completion: @escaping (Result<String, Error>) -> Void) {
+        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories?limit=2"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
+    private func getCategoryPlaylists(completion: @escaping (Result<[Playlist], Error>) -> Void) {
+        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories/\("id")/?limit=2"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
     // MARK: - Get Album Details
     
     public func getAlbumDetails(for album: Album, completion: @escaping (Result<AlbumDetailsResponse, Error>) -> Void) {
@@ -65,6 +105,8 @@ final class APICaller {
                     completion(.failure(error))
                 }
             }
+            
+            task.resume()
         }
     }
     

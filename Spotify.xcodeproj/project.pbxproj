@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA388DA27244F55005C9DD6 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA388D927244F55005C9DD6 /* GenreCollectionViewCell.swift */; };
 		3AB9FF12271608AF0051B41A /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9FF11271608AF0051B41A /* AlbumViewController.swift */; };
 		3AB9FF1427160D780051B41A /* AlbumDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9FF1327160D780051B41A /* AlbumDetailsResponse.swift */; };
 		3AB9FF162716158B0051B41A /* PlaylistDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9FF152716158B0051B41A /* PlaylistDetailsResponse.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AA388D927244F55005C9DD6 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB9FF11271608AF0051B41A /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		3AB9FF1327160D780051B41A /* AlbumDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsResponse.swift; sourceTree = "<group>"; };
 		3AB9FF152716158B0051B41A /* PlaylistDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsResponse.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				3AFDFDAF2713865A0039F13D /* Browse */,
 				3AFDFD672712E7740039F13D /* LaunchScreen.storyboard */,
+				3AA388D927244F55005C9DD6 /* GenreCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				3AFDFDA627135F830039F13D /* APIImage.swift in Sources */,
 				3AFDFD7A2712EAD90039F13D /* HomeViewController.swift in Sources */,
 				3AFDFD852712EB170039F13D /* SettingsViewController.swift in Sources */,
+				3AA388DA27244F55005C9DD6 /* GenreCollectionViewCell.swift in Sources */,
 				3AFDFD8F2712EB650039F13D /* AuthManager.swift in Sources */,
 				3AFDFDB5271386D00039F13D /* RecommendedTrackCollectionViewCell.swift in Sources */,
 				3AFDFD8B2712EB380039F13D /* PlaylistViewController.swift in Sources */,
