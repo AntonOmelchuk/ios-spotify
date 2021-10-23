@@ -28,8 +28,8 @@ final class APICaller {
     
     // MARK: - Category
     
-    private func getCategories(completion: @escaping (Result<String, Error>) -> Void) {
-        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories?limit=2"), type: .GET) { request in
+    public func getCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories?limit=50"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
@@ -37,7 +37,8 @@ final class APICaller {
                 }
                 
                 do {
-                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    let result = try JSONDecoder().decode(AllCategoriesResponse.self, from: data)
+                    completion(.success(result.categories.items))
                 } catch {
                     completion(.failure(error))
                 }
@@ -47,8 +48,8 @@ final class APICaller {
         }
     }
     
-    private func getCategoryPlaylists(completion: @escaping (Result<[Playlist], Error>) -> Void) {
-        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories/\("id")/?limit=2"), type: .GET) { request in
+    public func getCategoryPlaylists(category: Category, completion: @escaping (Result<[Playlist], Error>) -> Void) {
+        createRequest(withUrl: URL(string: Constants.baseAPIURL + "/browse/categories/\(category.id)/playlists?limit=2"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
@@ -56,7 +57,9 @@ final class APICaller {
                 }
                 
                 do {
-                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                    let playlists = result.playlists.items
+                    completion(.success(playlists))
                 } catch {
                     completion(.failure(error))
                 }
