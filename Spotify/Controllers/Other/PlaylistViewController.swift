@@ -92,6 +92,8 @@ class PlaylistViewController: UIViewController {
                 }
             }
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
     }
     
     override func viewDidLayoutSubviews() {
@@ -99,7 +101,21 @@ class PlaylistViewController: UIViewController {
         
         collectionView.frame = view.bounds
     }
+    
+    // MARK: - Selectros
+    
+    @objc func didTapShare() {
+        guard let url = URL(string: playlist.external_urls["spotify"] ?? "") else {return}
+        let vc = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: []
+        )
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
 }
+
+// MAKR: - Extensions
 
 extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
