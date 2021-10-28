@@ -291,13 +291,13 @@
 			children = (
 				3AFDFD802712EB030039F13D /* AuthViewController.swift */,
 				3AFDFD822712EB0B0039F13D /* WelcomeViewController.swift */,
+				3AA388DF27246E7C005C9DD6 /* CategoryViewController.swift */,
 				3AFDFD842712EB170039F13D /* SettingsViewController.swift */,
 				3AFDFD862712EB210039F13D /* ProfileViewController.swift */,
-				3AFDFD882712EB290039F13D /* PlayerViewController.swift */,
 				3AFDFD8A2712EB380039F13D /* PlaylistViewController.swift */,
+				3AFDFD882712EB290039F13D /* PlayerViewController.swift */,
 				3AFDFD8C2712EB4E0039F13D /* SearchResultsViewController.swift */,
 				3AB9FF11271608AF0051B41A /* AlbumViewController.swift */,
-				3AA388DF27246E7C005C9DD6 /* CategoryViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
