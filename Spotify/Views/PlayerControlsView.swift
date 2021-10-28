@@ -14,6 +14,11 @@ protocol PlayerControlsViewDelegate: AnyObject {
     func playerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView)
 }
 
+struct PlayerControlsViewViewModel {
+    let title: String?
+    let subtitle: String?
+}
+
 final class PlayerControlsView: UIView {
     
     // MARK: - Properties
@@ -126,5 +131,12 @@ final class PlayerControlsView: UIView {
     
     @objc func didTapPlayPause() {
         delegate?.playerControlsViewDidTapPlayPauseButton(self)
+    }
+    
+    // MARK: - Properties
+    
+    func configure(with viewModel: PlayerControlsViewViewModel) {
+        nameLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
     }
 }
