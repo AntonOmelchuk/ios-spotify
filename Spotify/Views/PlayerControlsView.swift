@@ -12,6 +12,7 @@ protocol PlayerControlsViewDelegate: AnyObject {
     func playerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView)
     func playerControlsViewDidTapForwardButton(_ playerControlsView: PlayerControlsView)
     func playerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView)
+    func playerControlsView(_ playerControlsView: PlayerControlsView, didSlideSlider value: Float)
 }
 
 struct PlayerControlsViewViewModel {
@@ -22,6 +23,8 @@ struct PlayerControlsViewViewModel {
 final class PlayerControlsView: UIView {
     
     // MARK: - Properties
+    
+    private var isPlaying = true 
     
     weak var delegate: PlayerControlsViewDelegate?
     
@@ -94,6 +97,7 @@ final class PlayerControlsView: UIView {
         backwardButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         forwardButton.addTarget(self, action: #selector(didTapForward), for: .touchUpInside)
         playPauseButton.addTarget(self, action: #selector(didTapPlayPause), for: .touchUpInside)
+        volumeSlider.addTarget(self, action: #selector(didSlideSlider), for: .valueChanged)
         
         clipsToBounds = true
     }
@@ -130,7 +134,18 @@ final class PlayerControlsView: UIView {
     }
     
     @objc func didTapPlayPause() {
+        self.isPlaying.toggle()
         delegate?.playerControlsViewDidTapPlayPauseButton(self)
+        
+        let pause = UIImage(systemName: "pause", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
+        let play = UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
+        
+        playPauseButton.setImage(isPlaying ? pause : play, for: .normal)
+    }
+    
+    @objc func didSlideSlider(_ slider: UISlider) {
+        let value = slider.value
+        delegate?.playerControlsView(self, didSlideSlider: value)
     }
     
     // MARK: - Properties

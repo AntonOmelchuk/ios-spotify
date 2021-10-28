@@ -92,6 +92,10 @@ extension PlaybackPresenter: PlayerViewControllerDelegate {
         }
     }
     
+    func didSlideSlider(_ value: Float) {
+        player?.volume = value
+    }
+    
     
 }
 
