@@ -148,14 +148,21 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let index = indexPath.row
-        let track = tracks[index]
+        var track = tracks[index]
+        track.album = self.album
         PlaybackPresenter.shared.startPlayback(from: self, track: track)
     }
 }
 
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        PlaybackPresenter.shared.startPlayback(from: self, tracks: tracks)
+        let tacksWithAlbum:[AudioTrack] = tracks.compactMap({
+            var track = $0
+            track.album = self.album
+            return track
+        })
+        
+        PlaybackPresenter.shared.startPlayback(from: self, tracks: tacksWithAlbum)
     }
 }
 
