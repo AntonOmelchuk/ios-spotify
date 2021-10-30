@@ -24,6 +24,8 @@ class LibraryAlbumsViewController: UIViewController {
     
     public var selectionHandler: ((Playlist) -> Void)?
     
+    private var observer: NSObjectProtocol?
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -35,14 +37,16 @@ class LibraryAlbumsViewController: UIViewController {
         
         setUpNoPlaylistView()
         fetchData()
+        observer = NotificationCenter.default.addObserver(forName: .albumSavedNotification, object: nil, queue: .main, using: { [weak self] _ in
+            self?.fetchData()
+        })
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        noAlbumsView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-        noAlbumsView.center = view.center
+        noAlbumsView.frame = CGRect(x: (view.width - 150) / 2, y: (view.height - 150) / 2, width: 150, height: 150)
         
-        tableView.frame = view.bounds
+        tableView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.height)
     }
     
     // MARK: - Selectors
@@ -54,6 +58,7 @@ class LibraryAlbumsViewController: UIViewController {
     // MARK: - API
     
     func fetchData() {
+        albums.removeAll()
         APICaller.shared.getCurrentUserAlbums { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
