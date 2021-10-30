@@ -28,7 +28,7 @@ class LibraryToggleView: UIView {
     private let playlistButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.label, for: .normal)
-        button.setTitle("Playlist", for: .normal)
+        button.setTitle("Playlists", for: .normal)
         
         return button
     }()
