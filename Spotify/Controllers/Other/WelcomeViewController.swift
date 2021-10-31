@@ -14,11 +14,38 @@ class WelcomeViewController: UIViewController {
     private let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In with Spotify", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = 5
         
         return button
+    }()
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "albums_background")
+        
+        return imageView
+    }()
+    
+    private let overlayView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.7
+        
+        return view
+    }()
+    
+    private let label: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 32, weight: .semibold)
+        label.textAlignment = .center
+        label.text = "Listen to Millions\nof Songs on\nthe go."
+        
+        return label
     }()
     
     // MARK: - Lifecycle
@@ -68,11 +95,19 @@ class WelcomeViewController: UIViewController {
         title = "Spotify"
         view.backgroundColor = .systemGreen
         
+        view.addSubview(imageView)
+        view.addSubview(overlayView)
         view.addSubview(signInButton)
+        view.addSubview(label)
     }
     
     private func configureUI() {
         signInButton.frame = CGRect(x: 20, y: view.height - 50 - view.safeAreaInsets.bottom, width: view.width - 40, height: 50)
         signInButton.addTarget(self, action: #selector(signInButtonHandler), for: .touchUpInside)
+        
+        overlayView.frame = view.bounds
+        imageView.frame = view.bounds
+        
+        label.frame = CGRect(x: 30, y: (view.height / 2) - 75, width: view.width - 60, height: 150)
     }
 }
